@@ -30,4 +30,4 @@ gleekframework 一套高性能且极简的 NET 组件库集合。适用于承载
 
 ## 社区
 
-在 [Discord](https://discord.gg/mJbaYqfe) 的社区里可以找到 gleekframework 的用户和开发者团队。
+在 [Discord](https://discord.gg/CS66gJxK) 的社区里可以找到 gleekframework 的用户和开发者团队。

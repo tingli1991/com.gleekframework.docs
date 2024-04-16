@@ -30,4 +30,4 @@ If you find gleekframework helpful to you, or you want to support my modest work
 
 ## Community
 
-In the community on [Discord](https://discord.gg/mJbaYqfe), you can find users and the developer team of gleekframework.
+In the community on [Discord](https://discord.gg/CS66gJxK), you can find users and the developer team of gleekframework.
