@@ -1,0 +1,2 @@
+- 入门
+  - [快速开始](/docs/zh-cn/quickstart.md)
