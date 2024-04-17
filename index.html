@@ -27,7 +27,7 @@
         <img src="/images/language/language.svg" class="emoji" loading="lazy"></a>
         <ul>
           <li>
-            <a href="#/docs/en/" title=" English">
+            <a href="#/docs/en-us/" title=" English">
               <img src="/images/language/en.png" alt="cn" class="emoji" loading="lazy">
               <span> English</span>
             </a>
@@ -52,20 +52,21 @@
       coverpage: true,
       loadSidebar: true,
       onlyCover: true,
+      notFoundPage: '/docs/_404.md',
       search: {
         depth: 3,// 搜索标题的最大层级, 1 - 6
-        pathNamespaces: ['/', '/zh-cn/', '/en/'],//使用不同的索引作为路径前缀（namespaces）
+        pathNamespaces: ['/', '/zh-cn/', '/en-us/'],//使用不同的索引作为路径前缀（namespaces）
         pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/,
         // 支持本地化
         noData: {
           '/': '找不到结果',
-          '/en/': 'No Results',
+          '/en-us/': 'No Results',
           '/zh-cn/': '找不到结果',
         },
         // 支持本地化
         placeholder: {
           '/': '搜索',
-          '/en/': 'Search',
+          '/en-us/': 'Search',
           '/zh-cn/': '搜索',
         }
       }

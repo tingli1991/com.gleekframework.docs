@@ -1,2 +1,0 @@
-- Getting started
-  - [Quick Start](/docs/en/quickstart.md)
