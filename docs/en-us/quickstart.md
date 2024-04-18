@@ -14,9 +14,9 @@ Before starting, it's recommended that everyone first installs the [NuGet](https
 - [Nexus](https://www.sonatype.com/) supports proxying remote repositories and hosting local repositories, capable of managing packages in various formats such as Maven, npm, NuGet, and more.
 - Compared to traditional nuget servers, [Nexus](https://www.sonatype.com/) offers more comprehensive repository management features. For instance, [Nexus](https://www.sonatype.com/) supports group repositories, allowing users to access and search multiple repositories through a single gateway.
 
-## Basic Components Explanation
+## Core Components Explanation
 
-The so-called basic components are those on which all of our components depend. For example, the Com.GleekFramework.AutofacSdk component will serve as the basis for IOC implementation for all our components, thus many components will depend on it. Below, I will list several important basic components, each of which must be injected to ensure the normal operation of any project.
+The so-called core components refer to the foundational elements that all our components depend upon. These components serve as the basis for the implementation of all our components. For example: IOC.
 
 > Com.GleekFramework.AutofacSdk
 
