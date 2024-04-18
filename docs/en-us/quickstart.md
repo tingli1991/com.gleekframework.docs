@@ -14,6 +14,46 @@ Before starting, it's recommended that everyone first installs the [NuGet](https
 - [Nexus](https://www.sonatype.com/) supports proxying remote repositories and hosting local repositories, capable of managing packages in various formats such as Maven, npm, NuGet, and more.
 - Compared to traditional nuget servers, [Nexus](https://www.sonatype.com/) offers more comprehensive repository management features. For instance, [Nexus](https://www.sonatype.com/) supports group repositories, allowing users to access and search multiple repositories through a single gateway.
 
+## Packaging Instructions
+
+Below is a batch command (`bat`) I wrote. In each component's directory, there's a `nuget-push.bat` file, which everyone can adjust according to their own requirements (before using, you need to adjust `source_api_uri` and `api_key`).
+
+```bash
+@echo off
+if %time:~0,2% LEQ 9 (set now=%date:~0,4%%date:~5,2%%date:~8,2%0%time:~1,1%%time:~3,2%%time:~6,2%) else (set now=%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%)
+
+:: Specify the name of the project to upload
+set project_name=Com.GleekFramework.AttributeSdk
+
+:: Specify the api key for uploading
+set api_key=278466c7-23cc-3ec8-86d8-43adde285742
+
+:: Specify the url for uploading
+set source_api_uri=http://192.168.100.15:8081/repository/nuget-hosted/index.json
+
+:: Get the current folder
+set current_dir=%~dp0%
+
+:: Project path (solution path)
+set solution_dir=%current_dir%..\
+
+:: Set the full name of the current project file (including the path)
+set csproj_path=%solution_dir%%project_name%\%project_name%.csproj
+
+:: Specify the package directory
+set packg_dir=%solution_dir%nupkgs\%project_name%\%now%
+
+:: Build the project and output the pack package
+echo start build and pack %project_name% ...
+dotnet pack %csproj_path%  -c Release -o %packg_dir% -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
+
+:: Batch push the packages
+echo start push %packg_name% ...
+dotnet nuget push  %packg_dir%\*.nupkg  -k %api_key% -s %source_api_uri%
+echo push %packg_name% finish ...
+pause
+```
+
 ## Core Components Explanation
 
 The so-called core components refer to the foundational elements that all our components depend upon. These components serve as the basis for the implementation of all our components. For example: IOC.

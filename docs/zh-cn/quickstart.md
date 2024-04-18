@@ -14,6 +14,46 @@
 - [Nexus](https://www.sonatype.com/) 支持代理远程仓库和托管本地仓库，能够管理 Maven、npm、NuGet 等多种格式的包。
 - [Nexus](https://www.sonatype.com/) 相比传统的 nuget server，[Nexus](https://www.sonatype.com/) 提供了更加全面的仓库管理功能。例如，[Nexus](https://www.sonatype.com/) 支持组仓库（Group Repository），允许用户通过单一的入口访问和搜索多个仓库。
 
+## 打包指令
+
+下面是我这边写的一个 bat 指令，在每个组件的目录下都有一个 nuget-push.bat 文件，大家也可以按照自己的需求进行调整(在使用之前需要调整 source_api_uri 和 api_key)
+
+```bash
+@echo off
+if %time:~0,2% LEQ 9 (set now=%date:~0,4%%date:~5,2%%date:~8,2%0%time:~1,1%%time:~3,2%%time:~6,2%) else (set now=%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%)
+
+:: 指定上传的工程名称
+set project_name=Com.GleekFramework.AttributeSdk
+
+:: 指定上传的api key
+set api_key=278466c7-23cc-3ec8-86d8-43adde285742
+
+:: 指定上传的url
+set source_api_uri=http://192.168.100.15:8081/repository/nuget-hosted/index.json
+
+:: 获取当前文件夹
+set current_dir=%~dp0%
+
+:: 项目路径(解决方案路径)
+set solution_dir=%current_dir%..\
+
+:: 设置当前工程文件的全名称(包含路径)
+set csproj_path=%solution_dir%%project_name%\%project_name%.csproj
+
+:: 指定packg目录
+set packg_dir=%solution_dir%nupkgs\%project_name%\%now%
+
+:: 编译项目输出pack包
+echo start build and pack %project_name% ...
+dotnet pack %csproj_path%  -c Release -o %packg_dir% -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
+
+:: 批量推送包
+echo start push %packg_name% ...
+dotnet nuget push  %packg_dir%\*.nupkg  -k %api_key% -s %source_api_uri%
+echo push %packg_name% finish ...
+pause
+```
+
 ## 核心组件说明
 
 所谓的核心组件，就是我们所有的组件都将依赖于这些组件，它将作为我们所有组件实现的基础，例如：IOC
