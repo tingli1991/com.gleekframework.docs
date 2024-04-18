@@ -14,9 +14,9 @@
 - [Nexus](https://www.sonatype.com/) 支持代理远程仓库和托管本地仓库，能够管理 Maven、npm、NuGet 等多种格式的包。
 - [Nexus](https://www.sonatype.com/) 相比传统的 nuget server，[Nexus](https://www.sonatype.com/) 提供了更加全面的仓库管理功能。例如，[Nexus](https://www.sonatype.com/) 支持组仓库（Group Repository），允许用户通过单一的入口访问和搜索多个仓库。
 
-## 基础组件说明
+## 核心组件说明
 
-所谓的基础组件，就是我们所有的组件都将依赖于这些组件，例如 Com.GleekFramework.AutofacSdk 组件，它将作为我们所有组件实现 IOC 的基础，所以很多组件都将依赖于它，下面我将列出重要的几个基础组件，这些组件每个项目都必须注入才能保证项目的正常运行
+所谓的核心组件，就是我们所有的组件都将依赖于这些组件，它将作为我们所有组件实现的基础，例如：IOC
 
 > Com.GleekFramework.AutofacSdk
 
