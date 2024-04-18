@@ -2,28 +2,31 @@
 
   - [Quick Start](/docs/en-us/quickstart.md)
 
-- Basic Components
+- Core Components
 
-  - [Basic Components](/docs/en-us/components/CommonSdk.md)
-  - [Public Contracts](/docs/en-us/components/ContractSdk.md)
-  - [Configuration Components](/docs/en-us/components/ConfigSdk.md)
-  - [IOC Components](/docs/en-us/components/AutofacSdk.md)
-  - [Assembly Components](/docs/en-us/components/AssemblySdk.md)
+  - [Config Component](/docs/en-us/components/ConfigSdk.md)
+  - [Autofac Component](/docs/en-us/components/AutofacSdk.md)
 
-- Categorized Components
+- Fundamental Components
 
-  - [Attribute Components](/docs/en-us/components/AttributeSdk.md)
-  - [Consumer Components](/docs/en-us/components/ConsumerSdk.md)
-  - [Dapper Components](/docs/en-us/components/DapperSdk.md)
-  - [Http Components](/docs/en-us/components/HttpSdk.md)
-  - [Kafka Components](/docs/en-us/components/KafkaSdk.md)
-  - [Migration Components](/docs/en-us/components/MigrationSdk.md)
-  - [Mongodb Components](/docs/en-us/components/MongodbSdk.md)
-  - [Nacos Components](/docs/en-us/components/NacosSdk.md)
-  - [NLog Components](/docs/en-us/components/NLogSdk.md)
-  - [Object Storage](/docs/en-us/components/ObjectSdk.md)
+  - [Common Contracts](/docs/en-us/components/ContractSdk.md)
+  - [Basic Extensions](/docs/en-us/components/CommonSdk.md)
+  - [Assembly Component](/docs/en-us/components/AssemblySdk.md)
+  - [Attribute Component](/docs/en-us/components/AttributeSdk.md)
+  - [NLog Component](/docs/en-us/components/NLogSdk.md)
+  - [Http Component](/docs/en-us/components/HttpSdk.md)
   - [Local Queue](/docs/en-us/components/QueueSdk.md)
-  - [RabbitMQ Components](/docs/en-us/components/RabbitMQSdk.md)
-  - [Redis Components](/docs/en-us/components/RedisSdk.md)
-  - [RocketMQ Components](/docs/en-us/components/RocketMQSdk.md)
-  - [Swagger Components](/docs/en-us/components/SwaggerSdk.md)
+  - [Consumer Component](/docs/en-us/components/ConsumerSdk.md)
+  - [Migration Component](/docs/en-us/components/MigrationSdk.md)
+
+- Application Components
+
+  - [Object Storage](/docs/en-us/components/ObjectSdk.md)
+  - [Dapper Component](/docs/en-us/components/DapperSdk.md)
+  - [Kafka Component](/docs/en-us/components/KafkaSdk.md)
+  - [Mongodb Component](/docs/en-us/components/MongodbSdk.md)
+  - [Nacos Component](/docs/en-us/components/NacosSdk.md)
+  - [RabbitMQ Component](/docs/en-us/components/RabbitMQSdk.md)
+  - [Redis Component](/docs/en-us/components/RedisSdk.md)
+  - [RocketMQ Component](/docs/en-us/components/RocketMQSdk.md)
+  - [Swagger Component](/docs/en-us/components/SwaggerSdk.md)
