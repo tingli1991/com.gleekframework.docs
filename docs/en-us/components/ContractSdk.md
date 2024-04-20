@@ -368,3 +368,117 @@ namespace Com.GleekFramework.ContractSdk
     }
 }
 ```
+
+## Important Services
+
+### SnowflakeService
+
+`SnowflakeService` This service I define it as the "snowflake algorithm service", its main function is to help us generate a 32-bit serial number according to the snowflake algorithm. This service relies on `SnowflakeProvider`. All the implementations of the snowflake algorithm are uniformly in the `SnowflakeProvider` (`SnowflakeProvider` is mainly used for non-IOC implementation classes, such as the SerialNo of `ContractResult`).
+!> Note: The machine code of the snowflake algorithm here is replaced by a random number from 1-999 for me, the purpose is to reduce complexity, and from a probabilistic point of view, it is indeed possible to repeat, but this logic has been running for several years, and no duplicate cases have been found. If a duplicate is encountered, please contact me.
+
+```C#
+using Com.GleekFramework.AutofacSdk;
+
+namespace Com.GleekFramework.ContractSdk
+{
+    /// <summary>
+    /// Snowflake algorithm implementation class
+    /// </summary>
+    public partial class SnowflakeService : IBaseAutofac
+    {
+        /// <summary>
+        /// Get the serial number
+        /// </summary>
+        /// <param name="suffix">Serial number prefix</param>
+        /// <returns></returns>
+        public string GetSerialNo(int suffix = 100)
+        {
+            return SnowflakeProvider.GetSerialNo(suffix);
+        }
+    }
+}
+```
+
+```C#
+using Com.GleekFramework.CommonSdk;
+using System;
+using System.Threading;
+
+namespace Com.GleekFramework.ContractSdk
+{
+    /// <summary>
+    /// Snowflake algorithm implementation class
+    /// </summary>
+    public static class SnowflakeProvider
+    {
+        /// <summary>
+        /// Self-increasing starting position
+        /// </summary>
+        private static long Sequence = 100000000L;
+
+        /// <summary>
+        /// Object lock
+        /// </summary>
+        private static readonly object @lock = new object();
+
+        /// <summary>
+        /// Random factor
+        /// </summary>
+        private static readonly Random Random = new Random((int)DateTime.Now.Ticks);
+
+        /// <summary>
+        /// Machine code
+        /// </summary>
+        private static readonly string PersonCode = $"{Random.NextLong(1, 999)}".PadLeft(3, '0');
+
+        /// <summary>
+        /// Time point for re-counting
+        /// </summary>
+        private static long RefSequence = long.Parse(DateTime.Now.Date.ToCstToday().AddDays(1).ToString("yyyyMMddHHmmssffff"));
+
+        /// <summary>
+        /// Get the serial number
+        /// </summary>
+        /// <param name="suffix">Serial number prefix</param>
+        /// <returns></returns>
+        public static string GetSerialNo(int suffix = 1)
+        {
+            var serialNo = NextSnowflakeNo(suffix);
+            if (string.IsNullOrWhiteSpace(serialNo))
+            {
+                throw new ArgumentNullException($"GetSerialNo({suffix}): Failed to obtain the sequence number!!!");
+            }
+            return serialNo;
+        }
+
+        /// <summary>
+        /// Generate the snowflake number
+        /// </summary>
+        /// <param name="suffix">Serial number prefix</param>
+        /// <returns></returns>
+        private static string NextSnowflakeNo(int suffix)
+        {
+            lock (@lock)
+            {
+                var currentTimeSpan = GetCurrentTimeSpan();
+                if (currentTimeSpan >= RefSequence)
+                {
+                    Sequence = 100000000L;
+                    RefSequence = long.Parse(DateTime.Now.Date.ToCstToday().AddDays(1).ToString("yyyyMMddHHmmssffff"));
+                }
+                Interlocked.Increment(ref Sequence);//Atomic increment
+                return $"{currentTimeSpan}{PersonCode}{Sequence}{suffix.ToString().PadLeft(2, '0').Substring(0, 2)}";
+            }
+        }
+
+        /// <summary>
+        /// Generate the current time stamp
+        /// </summary>
+        /// <returns></returns>
+        private static long GetCurrentTimeSpan()
+        {
+            return long.Parse(DateTime.Now.ToCstTime().ToString("yyyyMMddHHmmssffff"));
+        }
+    }
+}
+```
