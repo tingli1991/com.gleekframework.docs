@@ -1,6 +1,7 @@
 - 入门
 
   - [快速开始](/docs/zh-cn/quickstart.md)
+  - [结构推荐](/docs/zh-cn/recommended.md)
 
 - 核心组件
 

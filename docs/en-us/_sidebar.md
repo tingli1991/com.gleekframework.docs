@@ -1,6 +1,7 @@
 - Getting Started
 
   - [Quick Start](/docs/en-us/quickstart.md)
+  - [Structure Recommendation](/docs/en-us/recommended.md)
 
 - Core Components
 
