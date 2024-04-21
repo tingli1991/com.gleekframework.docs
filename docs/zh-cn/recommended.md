@@ -5,6 +5,7 @@
 ## 参阅项目
 
 [GitHub](https://github.com/tingli1991/org.gleek.authorize.git)
+
 [Gitee](https://gitee.com/litingxian1991/org.gleek.authorize.git)
 
 ## 目录结构

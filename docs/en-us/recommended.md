@@ -5,6 +5,7 @@ Here is a project interface that I have personally summarized after years of wor
 ## Referenced Projects
 
 [GitHub](https://github.com/tingli1991/org.gleek.authorize.git)
+
 [Gitee](https://gitee.com/litingxian1991/org.gleek.authorize.git)
 
 ## Directory Structure
