@@ -3,7 +3,7 @@
 > Com.GleekFramework.AutofacSdk
 
 - 描述：IOC(Autofac)开发工具包。
-- 用途：它将作为整个 [gleekframework](http://www.gleekframework.com/) IOC 的基础。
+- 用途：它将作为整个 [gleekframework](https://www.gleekframework.com/) IOC 的基础。
 
 ## 特点
 
@@ -15,7 +15,7 @@
 
 建议大家使用 UseAutofac() 方法进行 IOC 的激活，如果有定制的需求，则可以参考`AutofacHostingExtensions`的其他注入方式
 
-!> [gleekframework](http://www.gleekframework.com/) 默认将全部使用属性注入的方式，从而保证代码风格统一且高效
+!> [gleekframework](https://www.gleekframework.com/) 默认将全部使用属性注入的方式，从而保证代码风格统一且高效
 
 ```C#
 using Com.GleekFramework.AttributeSdk;

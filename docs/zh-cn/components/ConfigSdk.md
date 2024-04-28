@@ -3,7 +3,7 @@
 > Com.GleekFramework.ConfigSdk
 
 - 描述：配置文件拓展工具包
-- 用途：它将作为整个 [gleekframework](http://www.gleekframework.com/) 配置文件读取的核心组件包
+- 用途：它将作为整个 [gleekframework](https://www.gleekframework.com/) 配置文件读取的核心组件包
 
 ## 特点
 

@@ -3,7 +3,7 @@
 > Com.GleekFramework.AutofacSdk
 
 - Description: IOC (Autofac) development toolkit.
-- Purpose: It will serve as the foundation of the entire [gleekframework](http://www.gleekframework.com/) IOC.
+- Purpose: It will serve as the foundation of the entire [gleekframework](https://www.gleekframework.com/) IOC.
 
 ## Features
 
@@ -15,7 +15,7 @@
 
 It is recommended to use the UseAutofac() method to activate IOC. If there are custom needs, you can refer to other injection methods in `AutofacHostingExtensions`.
 
-[gleekframework](http://www.gleekframework.com/) will default to property injection to ensure a unified and efficient code style.
+[gleekframework](https://www.gleekframework.com/) will default to property injection to ensure a unified and efficient code style.
 
 ```C#
 using Com.GleekFramework.AttributeSdk;

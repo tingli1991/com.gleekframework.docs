@@ -25,7 +25,7 @@ Com.GleekFramework.AssemblySdk/
 
 ## 说明
 
-!> 注意：[gleekframework](http://www.gleekframework.com/)所有组件内的 Service 都是基于 IOC 的属性注入方式进行调用
+!> 注意：[gleekframework](https://www.gleekframework.com/)所有组件内的 Service 都是基于 IOC 的属性注入方式进行调用
 
 ### 调用示例
 

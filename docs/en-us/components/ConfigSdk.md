@@ -3,7 +3,7 @@
 > Com.GleekFramework.ConfigSdk
 
 - Description: Configuration file extension toolkit
-- Purpose: It serves as the core component package for reading the configuration files of the entire [gleekframework](http://www.gleekframework.com/)
+- Purpose: It serves as the core component package for reading the configuration files of the entire [gleekframework](https://www.gleekframework.com/)
 
 ## Features
 
