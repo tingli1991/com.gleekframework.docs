@@ -27,7 +27,7 @@
   - [Kafka Component](/docs/en-us/components/KafkaSdk.md)
   - [Mongodb Component](/docs/en-us/components/MongodbSdk.md)
   - [Nacos Component](/docs/en-us/components/NacosSdk.md)
-  - [RabbitMQ Component](/docs/en-us/components/RabbitMQSdk.md)
   - [Redis Component](/docs/en-us/components/RedisSdk.md)
+  - [RabbitMQ Component](/docs/en-us/components/RabbitMQSdk.md)
   - [RocketMQ Component](/docs/en-us/components/RocketMQSdk.md)
   - [Swagger Component](/docs/en-us/components/SwaggerSdk.md)

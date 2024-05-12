@@ -27,7 +27,7 @@
   - [Kafka 组件](/docs/zh-cn/components/KafkaSdk.md)
   - [Mongodb 组件](/docs/zh-cn/components/MongodbSdk.md)
   - [Nacos 组件](/docs/zh-cn/components/NacosSdk.md)
-  - [RabbitMQ 组件](/docs/zh-cn/components/RabbitMQSdk.md)
   - [Redis 组件](/docs/zh-cn/components/RedisSdk.md)
+  - [RabbitMQ 组件](/docs/zh-cn/components/RabbitMQSdk.md)
   - [RocketMQ 组件](/docs/zh-cn/components/RocketMQSdk.md)
   - [Swagger 组件](/docs/zh-cn/components/SwaggerSdk.md)
