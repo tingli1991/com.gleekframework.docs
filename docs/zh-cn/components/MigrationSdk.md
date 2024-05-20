@@ -31,8 +31,6 @@
 ### 类接口说明
 
 - `ITable`接口：定义数据表模型的基础接口
-- `BasicTable`：基础表模型，继承该类的数据表模型，都将默认包含`id` `id_deleted` `extend` `update_time` `create_time` `remark`
-- `VersionTable`：`VersionTable`相比`BasicTable`而言多了一个`version`字段，并自动会创建索引。
 
 ### 特性说明
 

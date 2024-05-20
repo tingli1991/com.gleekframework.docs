@@ -31,8 +31,6 @@ A database upgrade and migration toolkit, which is a secondary packaging based o
 ### Class Interface Description
 
 - `ITable` interface: Defines the basic interface for data table models.
-- `BasicTable`: Basic table model. Data table models that inherit this class will by default include `id`, `id_deleted`, `extend`, `update_time`, `create_time`, `remark`.
-- `VersionTable`: Compared to `BasicTable`, `VersionTable` has an additional `version` field and automatically creates indexes.
 
 ### Feature Explanation
 
