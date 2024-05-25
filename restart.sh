@@ -28,4 +28,4 @@ docker build -t "${IMAGE_NAME}" .
 
 # 创建并运行新容器
 echo "创建并运行新容器：${CONTAINER_NAME}，对外端口：${HOST_PORT}"
-docker run -d --restart unless-stopped --name "${CONTAINER_NAME}" -p "${HOST_PORT}":"${CONTAINER_PORT}" "${IMAGE_NAME}"
+docker run -d --restart unless-stopped -v /usr/local/com.gleekframework.docs:/usr/local/com.gleekframework.docs --name "${CONTAINER_NAME}" -p "${HOST_PORT}":"${CONTAINER_PORT}" "${IMAGE_NAME}"
